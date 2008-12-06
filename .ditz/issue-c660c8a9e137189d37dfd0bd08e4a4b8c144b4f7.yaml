@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: initial items model
+desc: |-
+  Not necessarily a seperate model from the data model.
+  Name, usage, effect, and optional meter rating. In other words, an item might look like this:
+  name: shower, usage: 10 min, effect: 30 gallons, meter: 3 gpm
+  In the case that a meter is present, effect should be calculated automatically as opposed to being entered by the user.
+type: :feature
+component: lifestyle
+release: 0.0.1
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-06 20:09:19.430801 Z
+references: []
+
+id: c660c8a9e137189d37dfd0bd08e4a4b8c144b4f7
+log_events: 
+- - 2008-12-06 20:09:21.022803 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""

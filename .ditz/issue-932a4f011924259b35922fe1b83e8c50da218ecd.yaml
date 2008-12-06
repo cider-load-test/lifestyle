@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: initial user model
+desc: |-
+  Name, timestamps.
+  Needs to be compatible with merb-auth
+type: :feature
+component: lifestyle
+release: 0.0.1
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-06 20:03:32.711185 Z
+references: []
+
+id: 932a4f011924259b35922fe1b83e8c50da218ecd
+log_events: 
+- - 2008-12-06 20:03:34.375158 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""

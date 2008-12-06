@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: initial data model
+desc: List (preferebly inline) of items that the user inputs.
+type: :feature
+component: lifestyle
+release: 0.0.1
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-06 20:06:19.182924 Z
+references: []
+
+id: 3373026e9f44a3246ccfb4003148637f0008f1ac
+log_events: 
+- - 2008-12-06 20:06:23.206996 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""

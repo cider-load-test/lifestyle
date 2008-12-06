@@ -1,0 +1,17 @@
+---
+# This is a sample database file for the DataMapper ORM
+development: &defaults
+  # These are the settings for repository :default
+  adapter:  couchdb
+  database: lifestyle-development
+ 
+test:
+  <<:       *defaults
+  database: lifestyle-test
+
+production:
+  <<:       *defaults
+  database: lifestyle-production
+
+rake:
+  <<: *defaults

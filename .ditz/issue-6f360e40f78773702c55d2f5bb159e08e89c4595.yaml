@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: name for data model
+desc: There's a model that will store lists of items that the user inputs, but I don't know what to call it.
+type: :task
+component: lifestyle
+release: 0.0.1
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-06 20:05:18.310927 Z
+references: []
+
+id: 6f360e40f78773702c55d2f5bb159e08e89c4595
+log_events: 
+- - 2008-12-06 20:05:21.038913 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
