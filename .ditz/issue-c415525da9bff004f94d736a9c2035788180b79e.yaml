@@ -1,0 +1,29 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: initial metric model
+desc: |-
+  Belongs to user, has many items. Belongs to many items would be more accurate of course, but whatever.
+  
+  Four properties:
+  - usage_unit : the unit name for what the user actually does (e.g. "minutes" for shower, "miles" for car)
+  - impact_unit  : the unit name for the impact of doing this (e.g. "gallons" [of water] for shower, "gallons" [of gas] for car)
+  - ratio : the ratio of impact over usage; when only usage is present, multiply by the ratio to get the impact
+  - name : the name of the metric (e.g. "car," "shower," "heater")
+type: :feature
+component: lifestyle
+release: 0.0.2
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-12 01:15:57.452254 Z
+references: []
+
+id: c415525da9bff004f94d736a9c2035788180b79e
+log_events: 
+- - 2008-12-12 01:15:58.524286 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
+- - 2008-12-12 01:16:25.204698 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - edited description
+  - Four properties, not three.
