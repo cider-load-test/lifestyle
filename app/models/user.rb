@@ -1,9 +1,9 @@
 class User
   include DataMapper::Resource
-  
+
   property :id, Serial
   property :login, String
+  timestamps :at
 
-  timestamps :on
-
+  has n, :reports
 end

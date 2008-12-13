@@ -10,7 +10,7 @@ desc: |-
   - name : the name of the metric (e.g. "car," "shower," "heater")
 type: :feature
 component: lifestyle
-release: 0.0.2
+release: 0.0.1
 reporter: Michael Zink <zuwiki@gmail.com>
 status: :unstarted
 disposition: 
@@ -27,3 +27,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - edited description
   - Four properties, not three.
+- - 2008-12-12 01:58:21.540348 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - assigned to release 0.0.1 from 0.0.2
+  - Simple enough it should really be for 0.0.1
