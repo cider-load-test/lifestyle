@@ -112,8 +112,8 @@ class ::Gem::Specification
       spec = index.search(dep).last
       unless spec
         wider_net = index.find_name(dep.name).last
-        ThorUI.error "Needed #{dep} for #{from.full_name}, but could not find it"
-        ThorUI.error "Found #{wider_net.full_name}" if wider_net
+        ThorUI.error "Needed #{dep} for #{from}, but could not find it"
+        ThorUI.error "Found #{wider_net}" if wider_net
         ::Thor::Tasks::Merb::Gem.rollback_trans
       end
       spec
