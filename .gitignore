@@ -16,9 +16,11 @@ src/*
 .hgignore
 .hg/*
 .svn/*
+bin/*
 gems/cache/*
 gems/gems/*/
 gems/specifications/*
+!bin/thor
 !gems/gems/thor*/
 !gems/specifications/thor*
 merb_profile_results
