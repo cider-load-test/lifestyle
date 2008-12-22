@@ -4,6 +4,8 @@ describe Item do
 
   it "should have integer usage" do
     i = Item.new
+    i.valid?.should == false
+    i.errors.on(:usage).should_not be_nil
     i.usage = 4
     i.usage.should == 4
     i.valid?
@@ -12,10 +14,23 @@ describe Item do
 
   it "should have integer impact" do
     i = Item.new
+    i.valid?.should == false
+    i.errors.on(:impact).should_not be_nil
     i.impact = 4
     i.impact.should == 4
     i.valid?
     i.errors.on(:impact).should be_nil
+  end
+
+  it "should belong to a report" do
+    r = Report.new
+    r.save.should == true
+    i = Item.new
+    i.valid?.should == false
+    i.errors.on(:report_id).should_not be_nil
+    i.report_id = r.id
+    i.valid?
+    i.errors.on(:report_id).should be_nil
   end
 
 end

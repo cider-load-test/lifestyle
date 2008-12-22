@@ -1,17 +1,15 @@
 ---
 development: &defaults
-  adapter: couchdb
-  database: lifestyle-development
-  host: localhost
-  port: 5984
+  adapter: sqlite3
+  database: lifestyle_development.sqlite3
 
 test:
   <<: *defaults
-  database: lifestyle-test
+  database: lifestyle_test.sqlite3
 
 production:
   <<: *defaults
-  database: lifestyle-production
+  database: lifestyle_production.sqlite3
 
 rake:
   <<: *defaults

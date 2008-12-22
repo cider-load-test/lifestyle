@@ -7,4 +7,6 @@ class Item
 
   has 1, :report
   #has 1, :metric
+  
+  validates_present :report_id, :usage, :impact
 end
