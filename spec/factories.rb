@@ -20,12 +20,7 @@ end
 
 # Valid users
 Factory.define :user do |u|
-  u.login { Factory.next(:login) }
+  u.login { |i| "user#{i}" }
   u.password "test"
   u.password_confirmation "test"
-end
-
-# Logins
-Factory.sequence :login do |n|
-  "user#{n}"
 end

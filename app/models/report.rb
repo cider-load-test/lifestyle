@@ -11,7 +11,17 @@ class Report
 
   # Validate that it belongs to a user
   # TODO: Validate that it's a valid user?
-  validates_present :user_id
+  validates_with_block :user do
+    if @user_id
+      if User.get(@user_id).valid?
+        true
+      else
+        [false, "Must belong to a valid user"]
+      end
+    else
+      [false, "Must belong to a user"]
+    end
+  end
 
   before :create, :set_timestamps
   before :update, :set_timestamps

@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 
 given "a report exists" do
+  User.all.destroy!
   Report.all.destroy!
-  request(resource(:reports), :method => "POST", 
-    :params => { :report => { :id => nil }})
+  Factory(:report)
 end
 
 describe "resource(:reports)" do
@@ -37,9 +37,11 @@ describe "resource(:reports)" do
   
   describe "a successful POST" do
     before(:each) do
+      User.all.destroy!
       Report.all.destroy!
+      u = Factory(:user).id
       @response = request(resource(:reports), :method => "POST", 
-        :params => { :report => { :id => nil }})
+        :params => {:report => Factory.attributes_for(:report, :user_id => u)})
     end
     
     it "redirects to resource(:reports)" do
