@@ -3,7 +3,10 @@ require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 given "a user exists" do
   User.all.destroy!
   request(resource(:users), :method => "POST", 
-    :params => { :user => { :id => nil, :login => "test" }})
+    :params => { :user => {
+      :id => nil, :login => "test", :password => "test",
+      :password_confirmation => "test"
+    }})
 end
 
 describe "resource(:users)" do
@@ -39,7 +42,10 @@ describe "resource(:users)" do
     before(:each) do
       User.all.destroy!
       @response = request(resource(:users), :method => "POST", 
-        :params => { :user => { :id => nil, :login => "test" }})
+        :params => { :user => {
+          :id => nil, :login => "test", :password => "test",
+          :password_confirmation => "test"
+        }})
     end
     
     it "redirects to resource(:users)" do
@@ -101,7 +107,7 @@ describe "resource(@user)", :given => "a user exists" do
         :params => { :user => {:id => @user.id} })
     end
   
-    it "redirect to the article show action" do
+    it "redirect to the show action" do
       @response.should redirect_to(resource(@user))
     end
   end

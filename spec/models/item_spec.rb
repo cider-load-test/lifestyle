@@ -2,24 +2,19 @@ require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 
 describe Item do
 
-  it "should have integer usage" do
-    i = Item.new
-    i.valid?.should == false
-    i.errors.on(:usage).should_not be_nil
-    i.usage = 4
-    i.usage.should == 4
-    i.valid?
-    i.errors.on(:usage).should be_nil
-  end
-
-  it "should have integer impact" do
+  it "should have either impact or usage" do
     i = Item.new
     i.valid?.should == false
     i.errors.on(:impact).should_not be_nil
-    i.impact = 4
-    i.impact.should == 4
+    i.errors.on(:usage).should_not be_nil
+    i.usage = 4
     i.valid?
     i.errors.on(:impact).should be_nil
+    i.errors.on(:usage).should be_nil
+    i = Item.new
+    i.impact = 4
+    i.errors.on(:impact).should be_nil
+    i.errors.on(:usage).should be_nil
   end
 
   it "should belong to a report" do

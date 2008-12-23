@@ -8,5 +8,12 @@ class Item
   has 1, :report
   #has 1, :metric
   
-  validates_present :report_id, :usage, :impact
+  # Validate that it belongs to a report
+  # TODO: Validate that it's a valid report?
+  validates_present :report_id
+
+  # Validate that either impact or usage are present
+  validates_with_block :usage, :impact do
+    !!@usage || !!@impact ? true : [false, "Need either impact or usage"]
+  end
 end

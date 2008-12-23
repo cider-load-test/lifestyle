@@ -12,7 +12,10 @@ describe User do
     u = User.new
     u.password = "test"
     u.password_confirmation = "test"
+    u.encrypt_password
     u.authenticated?("test").should == true
   end
+
+  it "validates with OpenID"
 
 end
