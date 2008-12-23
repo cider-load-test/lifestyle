@@ -8,6 +8,8 @@ class User
 
   has n, :reports
 
+  validates_is_unique :login
+
   before :create, :set_timestamps
   before :update, :set_timestamps
 

@@ -6,8 +6,12 @@ class Report
   property :created_at, DateTime, :nullable => false, :auto_validation => false
   property :updated_at, DateTime, :nullable => false, :auto_validation => false
 
-  has 1, :user
+  belongs_to :user
   has n, :items
+
+  # Validate that it belongs to a user
+  # TODO: Validate that it's a valid user?
+  validates_present :user_id
 
   before :create, :set_timestamps
   before :update, :set_timestamps

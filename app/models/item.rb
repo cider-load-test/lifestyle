@@ -5,7 +5,7 @@ class Item
   property :usage, Integer
   property :impact, Integer
 
-  has 1, :report
+  belongs_to :report
   #has 1, :metric
   
   # Validate that it belongs to a report

@@ -18,3 +18,5 @@ dependency "dm-migrations", dm_gems_version
 dependency "dm-types", dm_gems_version
 dependency "dm-validations", dm_gems_version
 dependency "do_sqlite3", "0.9.9"
+
+dependency "thoughtbot-factory_girl", "1.1.5", :require_as => false
