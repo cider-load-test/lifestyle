@@ -3,16 +3,15 @@ require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 describe User do
 
   it "has reports" do
-    u = User.new
-    u.reports << Report.new
+    u = Factory(:user)
+    puts u.login
+    u.reports << Factory(:report, :user_id => nil)
     u.reports.should_not be_empty
   end
 
   it "validates with a password" do
-    u = User.new
-    u.password = "test"
-    u.password_confirmation = "test"
-    u.encrypt_password
+    u = Factory(:user)
+    puts u.login
     u.authenticated?("test").should == true
   end
 

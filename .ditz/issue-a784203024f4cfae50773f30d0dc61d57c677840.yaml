@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Improved Item validation
+desc: |-
+  Only need both usage and impact if metric is not present.
+  Also validate that the associated report exists and is valid.
+type: :bugfix
+component: lifestyle
+release: 0.0.2
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-24 05:46:15.486123 Z
+references: []
+
+id: a784203024f4cfae50773f30d0dc61d57c677840
+log_events: 
+- - 2008-12-24 05:46:16.646048 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
