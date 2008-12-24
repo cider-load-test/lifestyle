@@ -11,8 +11,8 @@ type: :feature
 component: lifestyle
 release: 0.0.1
 reporter: Michael Zink <zuwiki@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-12-06 20:09:19.430801 Z
 references: []
 
@@ -26,3 +26,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - edited description
   - Reorganizing to reflect upcoming metric model
+- - 2008-12-24 00:14:48.975126 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - ""

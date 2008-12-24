@@ -7,13 +7,17 @@ components:
 releases: 
 - !ditz.rubyforge.org,2008-03-06/release 
   name: 0.0.1
-  status: :unreleased
-  release_time: 
+  status: :released
+  release_time: 2008-12-24 00:16:36.399094 Z
   log_events: 
   - - 2008-12-06 20:01:45.175245 Z
     - Michael Zink <zuwiki@gmail.com>
     - created
     - Just the models.
+  - - 2008-12-24 00:16:36.399104 Z
+    - Michael Zink <zuwiki@gmail.com>
+    - released
+    - ""
 - !ditz.rubyforge.org,2008-03-06/release 
   name: 0.0.2
   status: :unreleased

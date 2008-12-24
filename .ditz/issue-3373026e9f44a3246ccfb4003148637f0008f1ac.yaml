@@ -6,7 +6,7 @@ component: lifestyle
 release: 0.0.1
 reporter: Michael Zink <zuwiki@gmail.com>
 status: :closed
-disposition: :reorg
+disposition: :fixed
 creation_time: 2008-12-06 20:06:19.182924 Z
 references: []
 
@@ -20,3 +20,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - closed with disposition reorg
   - Split into three models (item, report, metric)
+- - 2008-12-24 00:14:55.703094 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - ""

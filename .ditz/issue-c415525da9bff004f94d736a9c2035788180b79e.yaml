@@ -10,7 +10,7 @@ desc: |-
   - name : the name of the metric (e.g. "car," "shower," "heater")
 type: :feature
 component: lifestyle
-release: 0.0.1
+release: 0.0.2
 reporter: Michael Zink <zuwiki@gmail.com>
 status: :unstarted
 disposition: 
@@ -31,3 +31,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - assigned to release 0.0.1 from 0.0.2
   - Simple enough it should really be for 0.0.1
+- - 2008-12-24 00:16:13.807049 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - assigned to release 0.0.2 from 0.0.1
+  - ""
