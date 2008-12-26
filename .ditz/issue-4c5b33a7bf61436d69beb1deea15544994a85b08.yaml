@@ -5,8 +5,8 @@ type: :task
 component: lifestyle
 release: 0.0.2
 reporter: Michael Zink <zuwiki@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-12-24 06:04:57.494464 Z
 references: []
 
@@ -16,3 +16,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - created
   - ""
+- - 2008-12-26 20:46:55.451625 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - Needs more work but whahtever.
