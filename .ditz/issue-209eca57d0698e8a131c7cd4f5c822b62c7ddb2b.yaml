@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: user and report read views
+desc: Index and show actions.
+type: :feature
+component: lifestyle
+release: 0.0.3
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-24 17:59:19.810599 Z
+references: []
+
+id: 209eca57d0698e8a131c7cd4f5c822b62c7ddb2b
+log_events: 
+- - 2008-12-24 17:59:20.826479 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
+- - 2008-12-24 18:02:18.122669 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - assigned to release 0.0.3 from 0.0.2
+  - Gotta get models 100% first

@@ -8,13 +8,40 @@ class Item
   belongs_to :report
   belongs_to :metric
   
-  # Validate that it belongs to a report
-  # TODO: Validate that it's a valid report?
-  validates_present :report_id
-
-  # Validate that either impact or usage are present
-  # TODO: Only need both if metric isn't present?
-  validates_with_block :usage, :impact do
-    !!@usage || !!@impact ? true : [false, "Need either impact or usage"]
+  validates_present :usage
+  
+  validates_with_block :report do
+    if @report_id
+      if Report.get(@report_id).valid?
+        true
+      else
+        [false, "Must belong to a valid report"]
+      end
+    else
+      [false, "Must belong to a valid report"]
+    end
   end
+  
+  # This thing is nasty. Basically it validates that there is either a metric
+  # or an impact but not both.
+  validates_with_block :metric, :impact do
+    if @metric_id
+      if Metric.get(@metric_id).valid?
+        if @impact
+          [false, "Can't have both a metric and an impact"]
+        else
+          true
+        end
+      else
+        [false, "Must belong to a valid metric"]
+      end
+    else
+      unless @impact
+        [false, "Need either a metric or an impact"]
+      else
+        true
+      end
+    end
+  end
+
 end

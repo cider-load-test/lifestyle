@@ -7,6 +7,7 @@ class User
   property :updated_at, DateTime, :nullable => false, :auto_validation => false
 
   has n, :reports
+  has n, :metrics
 
   validates_is_unique :login
 

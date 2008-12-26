@@ -27,3 +27,12 @@ releases:
     - Michael Zink <zuwiki@gmail.com>
     - created
     - Now with controllers and super-barebones views.
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 0.0.3
+  status: :unreleased
+  release_time: 
+  log_events: 
+  - - 2008-12-24 17:59:37.194391 Z
+    - Michael Zink <zuwiki@gmail.com>
+    - created
+    - ""

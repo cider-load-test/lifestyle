@@ -1,5 +1,5 @@
 --- !ditz.rubyforge.org,2008-03-06/issue 
-title: Improved Item validation
+title: improve item model
 desc: |-
   Only need both usage and impact if metric is not present.
   Also validate that the associated report exists and is valid.
@@ -7,8 +7,8 @@ type: :bugfix
 component: lifestyle
 release: 0.0.2
 reporter: Michael Zink <zuwiki@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-12-24 05:46:15.486123 Z
 references: []
 
@@ -18,3 +18,11 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - created
   - ""
+- - 2008-12-24 18:03:32.978500 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - edited title
+  - ""
+- - 2008-12-26 20:25:13.864982 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - Now requires usage and either metric or impact

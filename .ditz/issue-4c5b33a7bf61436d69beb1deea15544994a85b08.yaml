@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Write a readme
+desc: Including explanation of ditz.
+type: :task
+component: lifestyle
+release: 0.0.2
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-24 06:04:57.494464 Z
+references: []
+
+id: 4c5b33a7bf61436d69beb1deea15544994a85b08
+log_events: 
+- - 2008-12-24 06:04:59.390201 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""

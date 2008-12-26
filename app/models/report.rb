@@ -19,7 +19,7 @@ class Report
         [false, "Must belong to a valid user"]
       end
     else
-      [false, "Must belong to a user"]
+      [false, "Must belong to a valid user"]
     end
   end
 

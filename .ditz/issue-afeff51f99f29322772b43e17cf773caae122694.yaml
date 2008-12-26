@@ -1,0 +1,26 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: improve metric model
+desc: Not so sure about associations and stuff.
+type: :feature
+component: lifestyle
+release: 0.0.2
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :closed
+disposition: :fixed
+creation_time: 2008-12-24 18:00:50.194369 Z
+references: []
+
+id: afeff51f99f29322772b43e17cf773caae122694
+log_events: 
+- - 2008-12-24 18:00:53.434441 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
+- - 2008-12-24 18:01:38.178609 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - edited description, reporter
+  - ""
+- - 2008-12-26 20:21:37.057138 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - Validation works too :D
