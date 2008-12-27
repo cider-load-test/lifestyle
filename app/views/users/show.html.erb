@@ -4,6 +4,6 @@
     Joined on <%= time(@user.created_at) %>
   </small><br />
   <small id="<%= id(@user, :updated_at) %>">
-    Last modified on <%= time(@user.updated_at) %>
+    Last modified on <%= @user.updated_at.formatted(:pretty) %>
   </small></p>
 </div>

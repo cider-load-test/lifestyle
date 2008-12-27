@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: make urls for users use login not id
+desc: Should use same regex as validation for lagin
+type: :feature
+component: lifestyle
+release: 0.0.3
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-12-27 01:10:17.337511 Z
+references: []
+
+id: d135b81ff53120320e9c00311dac74f67701cead
+log_events: 
+- - 2008-12-27 01:10:19.337450 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
+- - 2008-12-27 01:11:38.465537 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - edited description
+  - ""

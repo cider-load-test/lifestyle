@@ -7,7 +7,7 @@
     <h3 id="<%= id(user, :login) %>">
       <%= link_to user.login, resource(user) %>
     </h1>
-    <small>Joined on <%= time(user.created_at) %></small>
+    <small>Joined on <%= user.created_at.formatted(:pretty) %></small>
   </div>
 <% end %>
 </div>

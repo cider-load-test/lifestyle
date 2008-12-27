@@ -1,8 +1,5 @@
 module Merb
   module GlobalHelpers
-    def time(datetime=DateTime.now, string="%A %B %d at %I:%M %p")
-      datetime.strftime(string)
-    end
 
     def id(object, att=nil)
       att = att ? "_" + att.to_s : ""
