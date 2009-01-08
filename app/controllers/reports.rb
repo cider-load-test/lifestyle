@@ -6,26 +6,31 @@ class Reports < Application
     display @reports
   end
 
-  def show(id)
-    @report = Report.get(id)
+  def show(login, id)
+    @user = User.first(:login => login)
+    @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     display @report
   end
 
-  def new
+  def new(login)
+    @user = User.first(:login => login)
     only_provides :html
     @report = Report.new
+    @report.user = @user
     display @report
   end
 
-  def edit(id)
+  def edit(login, id)
+    @user = User.first(:login => login)
     only_provides :html
-    @report = Report.get(id)
+    @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     display @report
   end
 
-  def create(report)
+  def create(login, report)
+    @user = User.first(:login => login)
     @report = Report.new(report)
     if @report.save
       redirect resource(@report), :message => {:notice => "Report was successfully created"}
@@ -35,8 +40,9 @@ class Reports < Application
     end
   end
 
-  def update(id, report)
-    @report = Report.get(id)
+  def update(login, id, report)
+    @user = User.first(:login => login)
+    @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.update_attributes(report)
        redirect resource(@report)
@@ -45,8 +51,9 @@ class Reports < Application
     end
   end
 
-  def destroy(id)
-    @report = Report.get(id)
+  def destroy(login, id)
+    @user = User.first(:login => login)
+    @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.destroy
       redirect resource(:reports)
