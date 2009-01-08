@@ -27,8 +27,11 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
-  resources :reports
-  resources :users
+
+  resources :users, :key => :login, :login => /[a-zA-Z0-9_]+/ do
+    resources :reports
+  end
+
   # RESTful routes
   # resources :posts
   

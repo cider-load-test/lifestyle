@@ -17,4 +17,6 @@ describe User do
 
   it "validates with OpenID"
 
+  it "must have a proper username"
+
 end
