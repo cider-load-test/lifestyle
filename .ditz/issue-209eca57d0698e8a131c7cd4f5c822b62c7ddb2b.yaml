@@ -5,8 +5,8 @@ type: :feature
 component: lifestyle
 release: 0.0.3
 reporter: Michael Zink <zuwiki@gmail.com>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-12-24 17:59:19.810599 Z
 references: []
 
@@ -20,3 +20,7 @@ log_events:
   - Michael Zink <zuwiki@gmail.com>
   - assigned to release 0.0.3 from 0.0.2
   - Gotta get models 100% first
+- - 2009-01-10 18:43:32.451008 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - closed with disposition fixed
+  - Basic at the moment, need some refactoring. Report views still need items.

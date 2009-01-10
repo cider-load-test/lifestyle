@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Item writing
+desc: Ajaxy form on a report's view to add items.
+type: :feature
+component: lifestyle
+release: 0.0.4
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-01-10 18:48:54.330863 Z
+references: []
+
+id: fc1eb38d9d360004640ffac0f0bd7d0f29f53a00
+log_events: 
+- - 2009-01-10 18:48:55.818914 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""

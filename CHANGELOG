@@ -1,3 +1,7 @@
+== 0.0.3 / 2009-01-10
+* user and report read views
+* make urls for users use login not id
+
 == 0.0.2 / 2008-12-26
 * bugfix: improve item model
 * improve metric model

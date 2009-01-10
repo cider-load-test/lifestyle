@@ -33,10 +33,23 @@ releases:
     - ""
 - !ditz.rubyforge.org,2008-03-06/release 
   name: 0.0.3
+  status: :released
+  release_time: 2009-01-10 18:43:43.707213 Z
+  log_events: 
+  - - 2008-12-24 17:59:37.194391 Z
+    - Michael Zink <zuwiki@gmail.com>
+    - created
+    - ""
+  - - 2009-01-10 18:43:43.707228 Z
+    - Michael Zink <zuwiki@gmail.com>
+    - released
+    - ""
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 0.0.4
   status: :unreleased
   release_time: 
   log_events: 
-  - - 2008-12-24 17:59:37.194391 Z
+  - - 2009-01-10 18:45:11.554797 Z
     - Michael Zink <zuwiki@gmail.com>
     - created
     - ""

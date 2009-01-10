@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Item read views
+desc: Within a report's show action, need a table of items.
+type: :feature
+component: lifestyle
+release: 0.0.4
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-01-10 18:47:26.162962 Z
+references: []
+
+id: 16261ba15760f87ca06b14ac088242f03e1af223
+log_events: 
+- - 2009-01-10 18:47:27.234966 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
+- - 2009-01-10 18:48:01.643046 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - edited description
+  - ""
