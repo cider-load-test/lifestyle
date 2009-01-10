@@ -12,11 +12,14 @@ dependency "merb-auth-more", merb_gems_version
 dependency "merb-param-protection", merb_gems_version
 dependency "merb-exceptions", merb_gems_version
 
+dependency "nokogiri", "1.1.0"
+
 dependency "dm-core", dm_gems_version
 dependency "dm-aggregates", dm_gems_version
 dependency "dm-migrations", dm_gems_version
 dependency "dm-types", dm_gems_version
 dependency "dm-validations", dm_gems_version
+dependency "dm-serializer", dm_gems_version
 dependency "do_sqlite3", "0.9.9"
 
 dependency "thoughtbot-factory_girl", "1.1.5", :require_as => false

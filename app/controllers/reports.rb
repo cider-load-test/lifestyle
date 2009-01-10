@@ -1,10 +1,14 @@
 class Reports < Application
-  # provides :xml, :yaml, :js
+  provides :xml, :yaml, :js
   before :find_user
 
   def index
-    @reports = Report.all
-    display @reports
+    if params[:format].nil? || params[:format] == "html"
+      redirect resource(@user)
+    else
+      @reports = Report.all(:user_id => @user.id)
+      display @reports
+    end
   end
 
   def show(id)
