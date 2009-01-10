@@ -1,36 +1,33 @@
 class Reports < Application
   # provides :xml, :yaml, :js
+  before :find_user
 
   def index
     @reports = Report.all
     display @reports
   end
 
-  def show(login, id)
-    @user = User.first(:login => login)
+  def show(id)
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     display @report
   end
 
-  def new(login)
-    @user = User.first(:login => login)
+  def new
     only_provides :html
     @report = Report.new
     @report.user = @user
     display @report
   end
 
-  def edit(login, id)
-    @user = User.first(:login => login)
+  def edit(id)
     only_provides :html
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     display @report
   end
 
-  def create(login, report)
-    @user = User.first(:login => login)
+  def create(report)
     @report = Report.new(report)
     if @report.save
       redirect resource(@user, @report), :message => {:notice => "Report was successfully created"}
@@ -40,8 +37,7 @@ class Reports < Application
     end
   end
 
-  def update(login, id, report)
-    @user = User.first(:login => login)
+  def update(id, report)
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.update_attributes(report)
@@ -51,8 +47,7 @@ class Reports < Application
     end
   end
 
-  def destroy(login, id)
-    @user = User.first(:login => login)
+  def destroy(id)
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.destroy
@@ -61,5 +56,10 @@ class Reports < Application
       raise InternalServerError
     end
   end
+
+  private
+    def find_user
+      @user = User.first(:login => params[:login])
+    end
 
 end # Reports
