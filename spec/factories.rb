@@ -7,7 +7,7 @@ Factory.define :item do |i|
 end
 
 Factory.define :report do |r|
-  r.day 4
+  r.day { Factory.next(:day) }
   r.association :user
 end
 
@@ -30,3 +30,4 @@ def n(i); (i*10 + ((rand(5) + rand) * 1000).to_i).to_s; end
 
 Factory.sequence :login do |i| "user" + n(i) end
 Factory.sequence :name do |i| "shower" + n(i) end
+Factory.sequence :day do |i| i end

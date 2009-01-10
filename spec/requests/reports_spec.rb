@@ -1,16 +1,22 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper.rb')
 
+given "a user exists" do
+  User.all.destroy!
+  Report.all.destroy!
+  Factory(:user)
+end
+
 given "a report exists" do
   User.all.destroy!
   Report.all.destroy!
   Factory(:report)
 end
 
-describe "resource(:reports)" do
+describe "resource(:reports)", :given => "a user exists" do
   describe "GET" do
     
     before(:each) do
-      @response = request(resource(:reports))
+      @response = request(resource(User.first, :reports))
     end
     
     it "responds successfully" do
@@ -26,7 +32,7 @@ describe "resource(:reports)" do
   
   describe "GET", :given => "a report exists" do
     before(:each) do
-      @response = request(resource(:reports))
+      @response = request(resource(User.first, :reports))
     end
     
     it "has a list of reports" do
@@ -39,13 +45,14 @@ describe "resource(:reports)" do
     before(:each) do
       User.all.destroy!
       Report.all.destroy!
-      u = Factory(:user).id
-      @response = request(resource(:reports), :method => "POST", 
-        :params => {:report => Factory.attributes_for(:report, :user_id => u)})
+      u = Factory(:user)
+      @response = request(resource(u, :reports), :method => "POST", 
+        :params => {:report => Factory.attributes_for(:report, :user_id => u.id)})
     end
     
-    it "redirects to resource(:reports)" do
-      @response.should redirect_to(resource(Report.first), :message => {:notice => "report was successfully created"})
+    it "redirects to resource(@report)" do
+      r = Report.first
+      @response.should redirect_to(resource(r.user, r), :message => {:notice => "Report was successfully created"})
     end
     
   end
@@ -54,11 +61,12 @@ end
 describe "resource(@report)" do 
   describe "a successful DELETE", :given => "a report exists" do
      before(:each) do
-       @response = request(resource(Report.first), :method => "DELETE")
+       @user = Report.first.user
+       @response = request(resource(@user, Report.first), :method => "DELETE")
      end
 
      it "should redirect to the index action" do
-       @response.should redirect_to(resource(:reports))
+       @response.should redirect_to(resource(@user, :reports))
      end
 
    end
@@ -66,7 +74,7 @@ end
 
 describe "resource(:reports, :new)" do
   before(:each) do
-    @response = request(resource(:reports, :new))
+    @response = request(resource(User.first, :reports, :new))
   end
   
   it "responds successfully" do
@@ -76,7 +84,7 @@ end
 
 describe "resource(@report, :edit)", :given => "a report exists" do
   before(:each) do
-    @response = request(resource(Report.first, :edit))
+    @response = request(resource(Report.first.user, Report.first, :edit))
   end
   
   it "responds successfully" do
@@ -88,7 +96,7 @@ describe "resource(@report)", :given => "a report exists" do
   
   describe "GET" do
     before(:each) do
-      @response = request(resource(Report.first))
+      @response = request(resource(Report.first.user, Report.first))
     end
   
     it "responds successfully" do
@@ -99,12 +107,12 @@ describe "resource(@report)", :given => "a report exists" do
   describe "PUT" do
     before(:each) do
       @report = Report.first
-      @response = request(resource(@report), :method => "PUT", 
+      @response = request(resource(@report.user, @report), :method => "PUT", 
         :params => { :report => {:id => @report.id} })
     end
   
     it "redirect to the article show action" do
-      @response.should redirect_to(resource(@report))
+      @response.should redirect_to(resource(@report.user, @report))
     end
   end
   

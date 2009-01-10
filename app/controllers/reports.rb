@@ -33,7 +33,7 @@ class Reports < Application
     @user = User.first(:login => login)
     @report = Report.new(report)
     if @report.save
-      redirect resource(@report), :message => {:notice => "Report was successfully created"}
+      redirect resource(@user, @report), :message => {:notice => "Report was successfully created"}
     else
       message[:error] = "Report failed to be created"
       render :new
@@ -45,7 +45,7 @@ class Reports < Application
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.update_attributes(report)
-       redirect resource(@report)
+       redirect resource(@user, @report)
     else
       display @report, :edit
     end
@@ -56,7 +56,7 @@ class Reports < Application
     @report = Report.first(:user_id => @user.id, :id => id)
     raise NotFound unless @report
     if @report.destroy
-      redirect resource(:reports)
+      redirect resource(@user, :reports)
     else
       raise InternalServerError
     end
