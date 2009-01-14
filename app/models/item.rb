@@ -44,4 +44,6 @@ class Item
     end
   end
 
+  # TODO: Overide #impact to utilise metric
+
 end

@@ -1,6 +1,6 @@
 class Users < Application
   provides :xml, :yaml, :js, :html
-  before :ensure_authenticated, :only => [:new, :edit, :create, :update]
+  before :ensure_authenticated, :only => [:edit]
 
   def index
     @users = User.all

@@ -2,7 +2,7 @@
 
 <%= form_for @user, :action => resource(:users), :method => :post do %>
   <div id="login"><%= text_field :login, :label => "login" %></div>
-  <div id="password"><%= text_field :password, :label => "password" %></div>
-  <div id="confirm"><%= text_field :password_confirmation, :label => "confirm" %></div>
+  <div id="password"><%= password_field :password, :label => "password" %></div>
+  <div id="confirm"><%= password_field :password_confirmation, :label => "confirm" %></div>
   <div id="submit"><%= submit "sign up" %></div>
 <% end =%>

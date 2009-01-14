@@ -14,13 +14,18 @@
       <div class="span-12"><h1>lifestyle</h1></div>
       <div id="navigation">
         <ul>
-          <% if session.authenticated? %><li>lolhai</li><% end %>
+          <% if session.authenticated? %>
+            <li><%= link_to session.user.login, resource(session.user) %></li>
+            <li><%= link_to "logout", url(:logout) %></li>
+          <% else %>
+            <li><%= link_to "login", url(:login) %></li>
+          <% end %>
         </ul>
       </div>
     </div>
     <div id="content" class="span-24">
       <h2><%= catch_content :for_title %></h2>
-      <%#= message[:notice] %>
+      <%= message[:notice] %>
       <%= catch_content :for_layout %>
     </div>
   </div>

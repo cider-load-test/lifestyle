@@ -1,3 +1,14 @@
-<h1 id="<%= id(@report, :day) %>">Report <%= @report.day %></h1>
+<% title "Day #{@report.day}" %>
+
 <small id="<%= id(@report, :user) %>">
   Belongs to <%= link_to @report.user.login, resource(@report.user) %>
+</small>
+
+<% @report.items.each do |item| %>
+  <div id="<%= id(item) %>">
+    <% if item.metric %>
+      <% u = item.metric.usage_unit; i = item.metric.impact_unit; r = item.metric.ratio %>
+      <%= item.usage %> <%= u %> at <%= r %> <%= "#{i}/#{u}" %> for <%= item.impact %> <%= i %>
+    <% end %>
+  </div>
+<% end %>

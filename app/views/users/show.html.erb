@@ -1,15 +1,23 @@
+<% title @user.login %>
+
 <div id="<%= id(@user) %>" class="user">
-  <h1 id="<%= id(@user, :login) %>" class="login"><%= @user.login %></h1>
-  <p><small id="<%= id(@user, :created_at) %>" class="created_at">
+  <p>
+  <% if session.user == @user %>
+    <small><%= link_to "edit", resource(@user, :edit) %></small><br/>
+  <% end %>
+  <small id="<%= id(@user, :created_at) %>" class="created_at">
     Joined on <%= @user.created_at.formatted(:pretty) %>
   </small><br />
   <small id="<%= id(@user, :updated_at) %>" class="updated_at">
     Last modified on <%= @user.updated_at.formatted(:pretty) %>
   </small></p>
   <div id="reports">
+    <% if session.user == @user %>
+      <%= link_to "new report", resource(@user, :reports, :new) %>
+    <% end %>
     <% @user.reports.each do |report| %>
       <div id="<%= id(report) %>">
-        <h3 ><%= link_to "Report #{report.day}", resource(@user, report) %></h3>
+        <h3 ><%= link_to "Day #{report.day}", resource(@user, report) %></h3>
       </div>
     <% end %>
   </div>

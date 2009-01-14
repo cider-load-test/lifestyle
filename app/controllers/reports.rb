@@ -33,6 +33,7 @@ class Reports < Application
 
   def create(report)
     @report = Report.new(report)
+    @report.user = @user
     if @report.save
       redirect resource(@user, @report), :message => {:notice => "Report was successfully created"}
     else

@@ -30,7 +30,9 @@ Merb::Router.prepare do
 
   resources :users, :identify => :login, :key => :login,
             :login => /[a-zA-Z0-9_]+/ do |user|
-    user.resources :reports
+    user.resources :reports do |report|
+      report.resources :items
+    end
   end
 
   # RESTful routes
@@ -43,8 +45,8 @@ Merb::Router.prepare do
   # This is fine for most cases.  If you're heavily using resource-based
   # routes, you may want to comment/remove this line to prevent
   # clients from calling your create or destroy actions with a GET
-  default_routes
-  
+  #default_routes
+
   # Change this for your home page to be available at /
-  # match('/').to(:controller => 'whatever', :action =>'index')
+  match('/').to(:controller => 'users', :action => 'new')
 end
