@@ -19,13 +19,8 @@ describe "resource(:reports)", :given => "a user exists" do
       @response = request(resource(User.first, :reports))
     end
     
-    it "responds successfully" do
-      @response.should be_successful
-    end
-
-    it "contains a list of reports" do
-      pending
-      @response.should have_xpath("//ul")
+    it "responds unsuccessfully" do
+      @response.should redirect_to(resource(User.first))
     end
     
   end
