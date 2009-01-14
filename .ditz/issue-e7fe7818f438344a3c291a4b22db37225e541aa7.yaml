@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Clean up the jq helper
+desc: It should do <script/> stuff automatically, and only if content is thrown (somehow).
+type: :task
+component: lifestyle
+release: 
+reporter: Michael Zink <zuwiki@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-01-14 10:50:08.747942 Z
+references: []
+
+id: e7fe7818f438344a3c291a4b22db37225e541aa7
+log_events: 
+- - 2009-01-14 10:50:10.323586 Z
+  - Michael Zink <zuwiki@gmail.com>
+  - created
+  - ""
