@@ -22,7 +22,8 @@ module Merb
         throw_content(:for_title, string)
       end
     end
-    
+
+    # TODO: flash helper
 
   end
 end

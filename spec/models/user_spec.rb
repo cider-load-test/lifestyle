@@ -1,5 +1,9 @@
 require File.join( File.dirname(__FILE__), '..', "spec_helper" )
 
+given "no users exist" do
+  Users.all.destroy!
+end
+
 describe User do
 
   it "has reports" do
@@ -15,8 +19,11 @@ describe User do
     u.authenticated?("test").should == true
   end
 
-  it "validates with OpenID"
+  it "must have a proper login", :given => "no users exist" do
+    Factory.build(:user, :login => "i'm a test").valid?.should == true
+    Factory.build(:user, :login => "test").valid?.should == true
+  end
 
-  it "must have a proper username"
+  it "validates with OpenID"
 
 end

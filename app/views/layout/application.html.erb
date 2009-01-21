@@ -3,7 +3,7 @@
   <head>
     <title><%= catch_content :for_title %> | lifestyle</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <%= css_include_tag "blueprint/screen", "blueprint/grid", :master, :media => "screen, projection" %>
+    <%= css_include_tag "blueprint/screen", :master, :media => "screen, projection" %>
     <!--[if IE]><%= css_include_tag "blueprint/ie", :media => "screen,projection" %><![endif]-->
     <%= js_include_tag :jquery, :application %>
     <script type="text/javascript"><%= jq %></script>
@@ -14,11 +14,12 @@
       <div class="span-12"><h1>lifestyle</h1></div>
       <div id="navigation">
         <ul>
-          <% if session.authenticated? %>
+          <% if session.user %>
             <li><%= link_to session.user.login, resource(session.user) %></li>
             <li><%= link_to "logout", url(:logout) %></li>
           <% else %>
             <li><%= link_to "login", url(:login) %></li>
+            <li><%= link_to "sign up", '/users/new' %>
           <% end %>
         </ul>
       </div>

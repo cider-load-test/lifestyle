@@ -1,14 +1,24 @@
 <% title "Day #{@report.day}" %>
 
-<small id="<%= id(@report, :user) %>">
+<p><small id="<%= id(@report, :user) %>">
   Belongs to <%= link_to @report.user.login, resource(@report.user) %>
-</small>
+</small></p>
 
 <% @report.items.each do |item| %>
   <div id="<%= id(item) %>">
+    <%= item.description %> |
     <% if item.metric %>
       <% u = item.metric.usage_unit; i = item.metric.impact_unit; r = item.metric.ratio %>
       <%= item.usage %> <%= u %> at <%= r %> <%= "#{i}/#{u}" %> for <%= item.impact %> <%= i %>
+    <% else %>
+      Usage: <%= item.usage %> Impact: <%= item.impact %>
     <% end %>
   </div>
 <% end %>
+
+<%= form :action => resource(@user, @report, :items) do %>
+  <%= text_field :name => 'item[description]', :label => "description", :id => "description" %>
+  <%= text_field :name => 'item[usage]', :label => "usage" %>
+  <%= text_field :name => 'item[impact]', :label => "impact" %>
+  <%= submit "create" %>
+<% end =%>

@@ -2,6 +2,7 @@ class Item
   include DataMapper::Resource
   
   property :id, Serial
+  property :description, String
   property :usage, Integer
   property :impact, Integer
 

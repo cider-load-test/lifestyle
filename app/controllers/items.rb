@@ -7,9 +7,9 @@ class Items < Application
     @item = Item.new(item)
     @item.report = @report
     if @item.save
-      redirect resource(@user, @report, @item), :message => {:notice => "Item successfully created"}
+      redirect resource(@user, @report), :message => {:notice => "Item successfully created"}
     else
-      message[:error] = "Item failed to be created"
+      redirect resource(@user, @report), :message => {:notice => "Item failed to be created"}
     end
   end
 

@@ -83,8 +83,9 @@ describe "resource(@user, :edit)", :given => "a user exists" do
     @response = request(resource(User.first, :edit))
   end
   
-  it "responds successfully" do
-    @response.should be_successful
+  it "responds successfully only if logged in" do
+    pending
+    @response.should_not be_successful
   end
 end
 

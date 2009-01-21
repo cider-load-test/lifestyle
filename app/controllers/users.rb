@@ -29,7 +29,11 @@ class Users < Application
   def create(user)
     @user = User.new(user)
     if @user.save
-      redirect resource(@user), :message => {:notice => "User was successfully created"}
+      unless session.authenticated?
+        session.user = @user
+      end
+      session[:notice] = "User was successfully created"
+      redirect resource(@user)
     else
       message[:error] = "User failed to be created"
       render :new
@@ -40,8 +44,10 @@ class Users < Application
     @user = User.first(:login => login)
     raise NotFound unless @user
     if @user.update_attributes(user)
-       redirect resource(@user)
+      message[:notice] = "User was successfully updated"
+      redirect resource(@user)
     else
+      message[:error] = "User could not be updated"
       display @user, :edit
     end
   end
@@ -50,6 +56,7 @@ class Users < Application
     @user = User.first(:login => login)
     raise NotFound unless @user
     if @user.destroy
+      message[:notice] = "User was destroyed"
       redirect resource(:users)
     else
       raise InternalServerError
