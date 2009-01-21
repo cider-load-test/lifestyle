@@ -21,6 +21,7 @@ gems/cache/*
 gems/gems/*/
 gems/specifications/*
 !bin/thor
+!bin/common.rb
 !gems/gems/thor*/
 !gems/specifications/thor*
 merb_profile_results
